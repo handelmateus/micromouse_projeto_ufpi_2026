@@ -4,11 +4,11 @@
   * @author  Kleber Lima da Silva (kleber.ufu@hotmail.com)
   * @version V1.0.1
   * @date    20-Abril-2015
-  * @brief   Inclusão das bibliotecas de usuário e definição de parâmetros
+  * @brief   Inclusï¿½o das bibliotecas de usuï¿½rio e definiï¿½ï¿½o de parï¿½metros
   ******************************************************************************
   */
 
-/* Define para previnir a inclusão recursiva ---------------------------------*/
+/* Define para previnir a inclusï¿½o recursiva ---------------------------------*/
 #ifndef __MAIN_H
 #define __MAIN_H
 
@@ -28,15 +28,18 @@
 #include "usart1.h"
 #include "usb_user.h"
 #include "flash.h"
+#include "user.h" 	  //biblioteca feita pelo usuario
+#include "controle.h" //biblioteca de controle
+#include "mlp.h" //biblioteca de rede neural
 
-
-/* Definições ----------------------------------------------------------------*/
-#define STDIO_USB	// STDIO_UART ou STDIO_USB: direciona as funções de escrita
-				// e leitura (printf, scanf, putc...) para a UART ou para a USB
+/* Definiï¿½ï¿½es ----------------------------------------------------------------*/
+#define STDIO_UART	// STDIO_UART ou STDIO_USB: direciona as funï¿½ï¿½es de escrita
+				    // e leitura (printf, scanf, putc...) para a UART ou para a USB
+//#define STDIO_USB
 
 /* Constantes ----------------------------------------------------------------*/
 /* Macros --------------------------------------------------------------------*/
-/* Protótipos das Funções --------------------------------------------------- */
+/* Protï¿½tipos das Funï¿½ï¿½es --------------------------------------------------- */
 void systick(void);
 
 

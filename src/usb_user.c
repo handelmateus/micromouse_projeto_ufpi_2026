@@ -4,7 +4,7 @@
   * @author  Kleber Lima da Silva (kleber.ufu@hotmail.com)
   * @version V1.0.0
   * @date    26-Abril-2015
-  * @brief   Funções para configuração e inicialização da USB no modo CDC
+  * @brief   Funï¿½ï¿½es para configuraï¿½ï¿½o e inicializaï¿½ï¿½o da USB no modo CDC
   ******************************************************************************
   */
 
@@ -12,13 +12,13 @@
 #include "usb_user.h"
 
 
-/* Variáveis Externas ------------------------------------------------------- */
+/* Variï¿½veis Externas ------------------------------------------------------- */
 extern PCD_HandleTypeDef hpcd;
 USBD_HandleTypeDef USBD_Device;
 
 
 /**
-  * @brief Configuração da USB
+  * @brief ConfiguraÃ§Ã£o da USB
   * @param Nenhum
   * @return Nenhum
   */
@@ -45,7 +45,7 @@ void OTG_FS_IRQHandler(void)
 
 
 /**
-  * @brief Redefinição das funções de escrita/leitura para uso das funções da stdio.h
+  * @brief Redefiniï¿½ï¿½o das funï¿½ï¿½es de escrita/leitura para uso das funï¿½ï¿½es da stdio.h
   */
 #ifdef STDIO_USB
 int _fstat (int fd, struct stat *pStat)

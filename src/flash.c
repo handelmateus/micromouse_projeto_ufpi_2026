@@ -4,7 +4,7 @@
   * @author  Kleber Lima da Silva (kleber.ufu@hotmail.com)
   * @version V1.0.1
   * @date    20-Abril-2015
-  * @brief   Funções de acesso à memória flash para guardar dados
+  * @brief   Funï¿½ï¿½es de acesso ï¿½ memï¿½ria flash para guardar dados
   ******************************************************************************
   */
 
@@ -13,10 +13,10 @@
 
 
 /**
-  * @brief Função para gravar um buffer na Flash
+  * @brief FunÃ§Ã£o para gravar um buffer na Flash
   * @param buffer com os dados a serem gravados
   * @param num_words: tamanho do buffer
-  * @return 0: erro durante a gravação; 1: gravação realizada com sucesso
+  * @return 0: erro durante a gravaÃ§Ã£o; 1: gravaÃ§Ã£o realizada com sucesso
   */
 uint8_t writeFlash(uint32_t *buffer, uint32_t num_words)
 {
@@ -42,7 +42,7 @@ uint8_t writeFlash(uint32_t *buffer, uint32_t num_words)
 
 
 /**
-  * @brief Função para ler o buffer gravado na Flash pela writeFlash
+  * @brief FunÃ§Ã£o para ler o buffer gravado na Flash pela writeFlash
   * @param buffer para receber os dados
   * @param num_words (tamanho do buffer)
   * @return nenhum

@@ -4,7 +4,7 @@
   * @author  Kleber Lima da Silva (kleber.ufu@hotmail.com)
   * @version V1.0.1
   * @date    20-Abril-2015
-  * @brief   Funções de acesso ao buzzer
+  * @brief   Funï¿½ï¿½es de acesso ao buzzer
   ******************************************************************************
   */
 
@@ -12,12 +12,12 @@
 #include "buzzer.h"
 
 
-/* Variáveis Externas ------------------------------------------------------- */
+/* Variï¿½veis Externas ------------------------------------------------------- */
 int32_t buzzerTime;
 
 
 /**
-  * @brief Configuração do pino para acionar o buzzer
+  * @brief ConfiguraÃ§Ã£o do pino para acionar o buzzer
   * @param Nenhum
   * @return Nenhum
   */
@@ -25,7 +25,7 @@ void buzzerConfig(void)
 {
 	BUZZER_CLK;	// Habilita o barramento de clock do GPIO do buzzer
 
-	// Configura o pino do buzzer como saída push/pull
+	// Configura o pino do buzzer como saï¿½da push/pull
 	GPIO_InitTypeDef GPIO_InitStructure;
 	GPIO_InitStructure.Pin = BUZZER_PIN;
 	GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
@@ -36,9 +36,9 @@ void buzzerConfig(void)
 
 
 /**
-  * @brief Gera vários beeps, o programa fica nesta rotina enquanto os beeps
-  * são gerados
-  * @param vezes: Número de beeps a serem gerados
+  * @brief Gera vÃ¡rios beeps, o programa fica nesta rotina enquanto os beeps
+  * sÃ£o gerados
+  * @param vezes: Nï¿½mero de beeps a serem gerados
   * @param t_on: Tempo que o buzzer fica ligado [ms]
   * @param t_off: Tempo que o buzzer fica desligado [ms]
   * @return Nenhum
@@ -58,7 +58,7 @@ void beeps(int vezes, int t_on, int t_off)
 
 
 /**
-  * @brief Gera um beep que pode ser usado durante o funcionamento do robô
+  * @brief Gera um beep que pode ser usado durante o funcionamento do robï¿½
   * @param duracao: Tempo do beep [ms]
   * @return Nenhum
   */

@@ -4,11 +4,11 @@
   * @author  Kleber Lima da Silva (kleber.ufu@hotmail.com)
   * @version V1.0.1
   * @date    20-Abril-2015
-  * @brief   Cabeçalho para o módulo usb_user.c
+  * @brief   Cabeï¿½alho para o mï¿½dulo usb_user.c
   ******************************************************************************
   */
 
-/* Define para previnir a inclusão recursiva ---------------------------------*/
+/* Define para previnir a inclusï¿½o recursiva ---------------------------------*/
 #ifndef __USB_USER_H
 #define __USB_USER_H
 
@@ -16,18 +16,18 @@
 /* Includes ------------------------------------------------------------------*/
 #include <sys/stat.h>
 #include <stdio.h>
-#include <usbd_core.h>
-#include <usbd_cdc.h>
+#include "../USB/Core/Inc/usbd_core.h"
+#include "../USB/CDC/Inc/usbd_cdc.h"
 #include <usbd_cdc_if_template.h>
 #include <usbd_desc.h>
 #include "stm32f4xx.h"
 #include "main.h"
 
 /* Constantes ----------------------------------------------------------------*/
-/* Protótipos das Funções --------------------------------------------------- */
+/* Protï¿½tipos das Funï¿½ï¿½es --------------------------------------------------- */
 void usbConfig (void);
 
-/* Variáveis ---------------------------------------------------------------- */
+/* Variï¿½veis ---------------------------------------------------------------- */
 
 
 #endif /* __USB_USER_H */

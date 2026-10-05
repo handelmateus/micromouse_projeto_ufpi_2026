@@ -37,6 +37,7 @@
 #include "stm32f4xx_it.h"
 #include "main.h"
 #include "buzzer.h"
+
 /* USER CODE BEGIN 0 */
 
 /* USER CODE END 0 */

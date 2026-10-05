@@ -4,19 +4,19 @@
   * @author  Kleber Lima da Silva (kleber.ufu@hotmail.com)
   * @version V1.0.1
   * @date    20-Abril-2015
-  * @brief   Funções para configuração e inicialização da USART1
+  * @brief   Funï¿½ï¿½es para configuraï¿½ï¿½o e inicializaï¿½ï¿½o da USART1
   ******************************************************************************
   */
 
 /* Includes ------------------------------------------------------------------*/
 #include "usart1.h"
 
-/* Variáveis Externas ------------------------------------------------------- */
+/* Variï¿½veis Externas ------------------------------------------------------- */
 UART_HandleTypeDef huart1;
 
 
 /**
-  * @brief Configuração da USART1
+  * @brief ConfiguraÃ§Ã£o da USART1
   * @param Nenhum
   * @return Nenhum
   */
@@ -34,9 +34,9 @@ void usart1Config(void)
 	GPIO_InitStruct.Alternate = GPIO_AF7_USART1;
 	HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-	// Configuração do periférico USART
+	// Configuraï¿½ï¿½o do perifï¿½rico USART
 	huart1.Instance = USART1;
-	huart1.Init.BaudRate = BAUD_RATE;
+	huart1.Init.BaudRate = BAUD_RATE; //115200
 	huart1.Init.WordLength = UART_WORDLENGTH_8B;
 	huart1.Init.StopBits = UART_STOPBITS_1;
 	huart1.Init.Parity = UART_PARITY_NONE;
@@ -50,24 +50,27 @@ void usart1Config(void)
 #ifdef STDIO_UART
 
 /**
-  * @brief Redefinição da função de escrita para uso da função printf - stdio.h
+  * @brief Redefiniï¿½ï¿½o da funï¿½ï¿½o de escrita para uso da funï¿½ï¿½o printf - stdio.h
   */
 int _write(int file, char *ptr, int len)
 {
-	HAL_UART_Transmit(&huart1, ptr, len, USART_TIMEOUT);
+    HAL_UART_Transmit(&huart1, ptr, len, USART_TIMEOUT);
+//    HAL_UART_Transmit(&huart1, (uint8_t *)ptr, len, HAL_MAX_DELAY);
 
 	return len;
 }
 
 
 /**
-  * @brief Redefinição da função de leitura para uso da função scanf - stdio.h
+  * @brief Redefiniï¿½ï¿½o da funï¿½ï¿½o de leitura para uso da funï¿½ï¿½o scanf - stdio.h
   */
 int _read (int file, char *ptr, int len)
 {
-	HAL_UART_Receive(&huart1, ptr, len, USART_TIMEOUT);
+    HAL_UART_Receive(&huart1, ptr, len, USART_TIMEOUT);
+//    HAL_UART_Receive(&huart1, (uint8_t *)ptr, len, HAL_MAX_DELAY);
 
 	return len;
 }
 
 #endif
+

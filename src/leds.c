@@ -4,7 +4,7 @@
   * @author  Kleber Lima da Silva (kleber.ufu@hotmail.com)
   * @version V1.0.1
   * @date    20-Abril-2015
-  * @brief   Funções para acionamento dos LEDs
+  * @brief   Funï¿½ï¿½es para acionamento dos LEDs
   ******************************************************************************
   */
 
@@ -12,7 +12,7 @@
 #include "leds.h"
 
 
-/** @defgroup Variáveis privadas
+/** @defgroup Variï¿½veis privadas
   * @{
   */
 GPIO_TypeDef* LEDS_PORT[N_LEDS] =
@@ -26,7 +26,7 @@ const uint16_t LEDS_PIN[N_LEDS] =
 
 
 /**
-  * @brief Configuração dos GPIOs para acionamento dos LEDs
+  * @brief ConfiguraÃ§Ã£o dos GPIOs para acionamento dos LEDs
   * @param Nenhum
   * @return Nenhum
   */
@@ -34,7 +34,7 @@ void ledsConfig(void)
 {
 	LEDS_CLK;	// Habilita o barramento de clock do GPIO dos LEDs
 
-	// Configura os GPIOs dos LEDs como saídas push/pull
+	// Configura os GPIOs dos LEDs como saï¿½das push/pull
 	GPIO_InitTypeDef GPIO_InitStructure;
 	for (int i = 0; i < N_LEDS; i++)
 	{
@@ -49,7 +49,7 @@ void ledsConfig(void)
 
 /**
   * @brief Altera o estado de um LED
-  * @param led: Número do LED
+  * @param led: Nï¿½mero do LED
   * @param estado: LOW - apaga o LED ou HIGH - liga o LED
   * @return Nenhum
   */
@@ -61,7 +61,7 @@ void setLED(Led_TypeDef led, GPIO_PinState estado)
 
 /**
   * @brief Altera o estado de um LED para o estado complementar
-  * @param led: Número do LED
+  * @param led: Nï¿½mero do LED
   * @return Nenhum
   */
 void toggleLED(Led_TypeDef led)

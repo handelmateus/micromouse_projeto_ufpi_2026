@@ -4,7 +4,7 @@
   * @author  Kleber Lima da Silva (kleber.ufu@hotmail.com)
   * @version V1.0.1
   * @date    20-Abril-2015
-  * @brief   Funções para acionamento do Botão SW1
+  * @brief   Funï¿½ï¿½es para acionamento do Botï¿½o SW1
   ******************************************************************************
   */
 
@@ -12,7 +12,7 @@
 #include "sensores.h"
 
 
-/** @defgroup Variáveis privadas
+/** @defgroup Variï¿½veis privadas
   * @{
   */
 GPIO_TypeDef* EMISSORES_PORT[N_EMISSORES] =
@@ -44,7 +44,7 @@ ADC_HandleTypeDef hadc1;
 
 
 /**
-  * @brief Configuração dos GPIOs e ADCs dos sensores
+  * @brief Configuraï¿½ï¿½o dos GPIOs e ADCs dos sensores
   * @param Nenhum
   * @return Nenhum
   */
@@ -54,7 +54,7 @@ void sensoresConfig(void)
 	GPIO_InitTypeDef GPIO_InitStructure;
 	ADC_ChannelConfTypeDef sConfig;
 
-	// Configura os GPIOs dos emissores como saída push/pull
+	// Configura os GPIOs dos emissores como saï¿½da push/pull
 	for (int i = 0; i < N_EMISSORES; i++)
 	{
 		GPIO_InitStructure.Pin = EMISSORES_PIN[i];;
@@ -76,7 +76,7 @@ void sensoresConfig(void)
 	}
 
 
-	// Configura os pinos analógicos
+	// Configura os pinos analï¿½gicos
 	for (int i = 0; i < N_ANALOGICAS; i++)
 	{
 		GPIO_InitStructure.Pin = ANALOGICAS_PIN[i];
@@ -85,7 +85,7 @@ void sensoresConfig(void)
 		HAL_GPIO_Init(ANALOGICAS_PORT[i], &GPIO_InitStructure);
 	}
 
-	// Configuração do ADC
+	// Configuraï¿½ï¿½o do ADC
 	__ADC1_CLK_ENABLE();
 	hadc1.Instance = ADC1;
 	hadc1.Init.ClockPrescaler = ADC_CLOCKPRESCALER_PCLK_DIV4;
@@ -105,14 +105,16 @@ void sensoresConfig(void)
 /**
   * @brief Realiza a leitura dos sensores de parede
   * 		(atualiza os sensores frontais e laterais)
-  * @param lf Valor proporcional a distância do sensor frontal esquerdo
-  * @param l Valor proporcional a distância do sensor diagonal esquerdo
-  * @param r Valor proporcional a distância do sensor diagonal direito
-  * @param rf Valor proporcional a distância do sensor frontal direito
-  * @return paredes: máscara de bits indicando presença (1) ou não (0)
+  * @param lf Valor proporcional a distï¿½ncia do sensor frontal esquerdo
+  * @param l Valor proporcional a distï¿½ncia do sensor diagonal esquerdo
+  * @param r Valor proporcional a distï¿½ncia do sensor diagonal direito
+  * @param rf Valor proporcional a distï¿½ncia do sensor frontal direito
+  * @return paredes: mï¿½scara de bits indicando presenï¿½a (1) ou nï¿½o (0)
   * 	de paredes. O bit mais significativo representa a parede da esquerda.
-  * 	Ex.: 011 = presença de parede frontal e direita.
+  * 	Ex.: 011 = presenï¿½a de parede frontal e direita.
+  *
   */
+
 int32_t getSensoresParede(int32_t* lf, int32_t* l, int32_t* r, int32_t* rf)
 {
 	int32_t paredes = 0;
@@ -163,7 +165,7 @@ int32_t getSensoresParede(int32_t* lf, int32_t* l, int32_t* r, int32_t* rf)
 	}
 
 
-	// Realiza a máscara de bits
+	// Realiza a mï¿½scara de bits
 	if ((*lf) > THRESHOLD || (*rf) > THRESHOLD)
 	{
 		paredes |= PAREDE_FRONTAL;
@@ -179,7 +181,7 @@ int32_t getSensoresParede(int32_t* lf, int32_t* l, int32_t* r, int32_t* rf)
 		paredes |= PAREDE_DIREITA;
 	}
 
-	return paredes;
+	return paredes;//gerada em decimal
 }
 
 
@@ -187,7 +189,7 @@ int32_t getSensoresParede(int32_t* lf, int32_t* l, int32_t* r, int32_t* rf)
   * @brief Verifica os sensores de linha
   * @param Nenhum
   * @return erro: valores entre -40 e 40 (valores negativos indicam que
-  *		o robô precisa se deslocar para a esquerda)
+  *		o robï¿½ precisa se deslocar para a esquerda)
   */
 int32_t getSensoresLinha()
 {
@@ -200,7 +202,7 @@ int32_t getSensoresLinha()
 	elapse_us(100, t0);
 
 	// Realiza a leitura de todos os sensores de linha, os sensores das
-	// extremidades pussuem peso maior, no final é realizada a média ponderada
+	// extremidades pussuem peso maior, no final ï¿½ realizada a mï¿½dia ponderada
 	if (HAL_GPIO_ReadPin(LINE1_PORT, LINE1_PIN) == LINHA)
 	{
 		soma += -40;
@@ -247,7 +249,7 @@ int32_t getSensoresLinha()
 	HAL_GPIO_WritePin(R_LINE_PORT, R_LINE_PIN, LOW);
 
 
-	// Retorna a média ou retorna a constante INFINITO indicando
+	// Retorna a mï¿½dia ou retorna a constante INFINITO indicando
 	// que nenhum sensor leu linha
 	if (n != 0)
 	{
@@ -263,35 +265,38 @@ int32_t getSensoresLinha()
 
 
 /**
-  * @brief Verifica a leitura do giroscópio
+  * @brief Verifica a leitura do giroscï¿½pio
   * @param Nenhum
   * @return w: Velocidade angular
   */
+//ver unidade de medida
 int32_t getGyro()
 {
 	int32_t w = 0;
-
 	w = getRawADC(G_OUTZ_CH) - getRawADC(G_VREF_CH);
+//	w = getRawADC(G_OUTZ_CH) - 1320;
 
 	return w;
 }
 
 
 /**
-  * @brief Verifica a tensão da bateria
+  * @brief Verifica a tensï¿½o da bateria
   * @param Nenhum
-  * @return Tensão da bateria em mV
+  * @return Tensï¿½o da bateria em mV
   */
 int32_t getTensao()
 {
 	return ((getRawADC(VBAT_CH) * VBAT_V) / VBAT_RAW);
+	// VBAT_RAW = 3434
+	// VBAT_V = 8270
 }
 
 
 /**
-  * @brief Realiza a conversão de um canal analógico
-  * @param canal: Canal analógico a ser realizado a conversão
-  * @return rawADC: Resultado da conversão (valor de 12 bits)
+  * @brief Realiza a conversï¿½o de um canal analï¿½gico
+  * @param canal: Canal analï¿½gico a ser realizado a conversï¿½o
+  * @return rawADC: Resultado da conversï¿½o (valor de 12 bits)
   */
 uint32_t getRawADC(uint32_t canal)
 {

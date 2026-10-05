@@ -4,7 +4,7 @@
   * @author  Kleber Lima da Silva (kleber.ufu@hotmail.com)
   * @version V1.0.1
   * @date    20-Abril-2015
-  * @brief   Funções de atrasos
+  * @brief   Funï¿½ï¿½es de atrasos
   ******************************************************************************
   */
 
@@ -13,9 +13,9 @@
 
 
 /**
-  * @brief Realiza a leitura do tempo passado desde o inicio da operação
+  * @brief Realiza a leitura do tempo passado desde o inicio da operaÃ§Ã£o
   * @param Nenhum
-  * @return microsegundos desde o inicio da operação
+  * @return microsegundos desde o inicio da operaÃ§Ã£o
   */
 uint32_t micros(void)
 {
@@ -24,9 +24,9 @@ uint32_t micros(void)
 
 
 /**
-  * @brief Realiza a leitura do tempo passado desde o inicio da operação
+  * @brief 	Realiza a leitura do tempo passado desde o inicio da operaÃ§Ã£o
   * @param Nenhum
-  * @return milisegundos desde o inicio da operação
+  * @return milisegundos desde o inicio da operaÃ§Ã£o
   */
 uint32_t millis(void)
 {
@@ -35,8 +35,8 @@ uint32_t millis(void)
 
 
 /**
-  * @brief Aguarda um tempo em microsegundos em relação a um tempo inicial
-  * @param targetTime: Tempo que será aguardado em microsegundos
+  * @brief Aguarda um tempo em microsegundos em relaÃ§Ã£o a um tempo inicial
+  * @param targetTime: Tempo que serï¿½ aguardado em microsegundos
   * @param t0: Tempo inicial em microsegundos
   * @return Nenhum
   */

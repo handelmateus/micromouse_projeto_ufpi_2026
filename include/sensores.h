@@ -4,11 +4,11 @@
   * @author  Kleber Lima da Silva (kleber.ufu@hotmail.com)
   * @version V1.0.1
   * @date    20-Abril-2015
-  * @brief   Cabeçalho para o módulo sensores.c
+  * @brief   Cabeï¿½alho para o mï¿½dulo sensores.c
   ******************************************************************************
   */
 
-/* Define para previnir a inclusão recursiva ---------------------------------*/
+/* Define para previnir a inclusï¿½o recursiva ---------------------------------*/
 #ifndef __SENSORES_H
 #define __SENSORES_H
 
@@ -22,7 +22,7 @@
 #define LOW		GPIO_PIN_RESET
 #define HIGH	GPIO_PIN_SET
 #define LINHA	GPIO_PIN_RESET	// RESET (linha branca); SET (linha preta)
-#define INFINITO	8888		// Valor que indica a não identificação de linha
+#define INFINITO	8888		// Valor que indica a nï¿½o identificaï¿½ï¿½o de linha
 
 #define THRESHOLD	1000
 #define PAREDE_ESQUERDA	0b100
@@ -33,17 +33,17 @@
 
 #define N_EMISSORES	6
 #define LF_E_PORT	GPIOD
-#define LF_E_PIN	GPIO_PIN_2
+#define LF_E_PIN	GPIO_PIN_2 // pino do LF 2
 #define POWER1_PORT	GPIOC
 #define POWER1_PIN	GPIO_PIN_12
 #define POWER2_PORT	GPIOC
 #define POWER2_PIN	GPIO_PIN_11
 #define RF_E_PORT	GPIOC
-#define RF_E_PIN	GPIO_PIN_10
+#define RF_E_PIN	GPIO_PIN_10 // pino do RF
 #define L_LINE_PORT	GPIOA
-#define L_LINE_PIN	GPIO_PIN_14
+#define L_LINE_PIN	GPIO_PIN_14 // pino do L 14
 #define R_LINE_PORT	GPIOA
-#define R_LINE_PIN	GPIO_PIN_13
+#define R_LINE_PIN	GPIO_PIN_13 // pino do R
 
 #define N_RECEPTORES	8
 #define LINE1_PORT	GPIOC
@@ -65,16 +65,16 @@
 
 #define N_ANALOGICAS	7
 #define LF_R_PORT	GPIOC
-#define LF_R_PIN	GPIO_PIN_5
+#define LF_R_PIN	GPIO_PIN_5 // pino do LF
 #define LF_R_CH		ADC_CHANNEL_15
 #define L_R_PORT	GPIOC
-#define L_R_PIN		GPIO_PIN_4
+#define L_R_PIN		GPIO_PIN_4 // pino do L
 #define L_R_CH		ADC_CHANNEL_14
 #define R_R_PORT	GPIOA
-#define R_R_PIN		GPIO_PIN_7
+#define R_R_PIN		GPIO_PIN_7 // pino do R
 #define R_R_CH		ADC_CHANNEL_7
 #define RF_R_PORT	GPIOA
-#define RF_R_PIN	GPIO_PIN_6
+#define RF_R_PIN	GPIO_PIN_6 // pino do RF
 #define RF_R_CH		ADC_CHANNEL_6
 #define G_OUTZ_PORT	GPIOB
 #define G_OUTZ_PIN	GPIO_PIN_1
@@ -86,11 +86,11 @@
 #define VBAT_PIN	GPIO_PIN_2
 #define VBAT_CH		ADC_CHANNEL_2
 #define VBAT_ALERTA 7000
-// Constantes para calibrar o valor da tensão medida
+// Constantes para calibrar o valor da tensï¿½o medida
 #define VBAT_RAW	3434
 #define VBAT_V		8270
 
-/* Protótipos das Funções --------------------------------------------------- */
+/* Protï¿½tipos das Funï¿½ï¿½es --------------------------------------------------- */
 void sensoresConfig(void);
 int32_t getSensoresParede(int32_t*, int32_t*, int32_t*, int32_t*);
 int32_t getSensoresLinha();

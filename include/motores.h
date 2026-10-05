@@ -4,11 +4,11 @@
   * @author  Kleber Lima da Silva (kleber.ufu@hotmail.com)
   * @version V1.0.0
   * @date    17-Fevereiro-2015
-  * @brief   Cabeçalho para o módulo motores.c
+  * @brief   Cabeï¿½alho para o mï¿½dulo motores.c
   ******************************************************************************
   */
 
-/* Define para previnir a inclusão recursiva ---------------------------------*/
+/* Define para previnir a inclusï¿½o recursiva ---------------------------------*/
 #ifndef __MOTORES_H
 #define __MOTORES_H
 
@@ -21,7 +21,7 @@
 #define MOTORES_CLK	__GPIOB_CLK_ENABLE(); __GPIOC_CLK_ENABLE(); __TIM4_CLK_ENABLE()
 #define PWM_AF_TIM	GPIO_AF2_TIM4
 #define PWM_TIM		TIM4
-#define PWM_PERIOD		999
+#define PWM_PERIOD		99//999
 #define PWM_PRESCALER	3
 #define L_PWM_PORT	GPIOB
 #define L_PWM_PIN	GPIO_PIN_6
@@ -42,7 +42,7 @@
 #define STBY_PORT	GPIOC
 #define STBY_PIN	GPIO_PIN_1
 
-/* Protótipos das Funções --------------------------------------------------- */
+/* Protï¿½tipos das Funï¿½ï¿½es --------------------------------------------------- */
 void motoresConfig(void);
 void setMotores(int16_t pwm_esquerda, int16_t pwm_direita);
 

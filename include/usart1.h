@@ -4,11 +4,11 @@
   * @author  Kleber Lima da Silva (kleber.ufu@hotmail.com)
   * @version V1.0.1
   * @date    20-Abril-2015
-  * @brief   Cabeçalho para o módulo usart1.c
+  * @brief   Cabeï¿½alho para o mï¿½dulo usart1.c
   ******************************************************************************
   */
 
-/* Define para previnir a inclusão recursiva ---------------------------------*/
+/* Define para previnir a inclusï¿½o recursiva ---------------------------------*/
 #ifndef __USART1_H
 #define __USART1_H
 
@@ -19,13 +19,15 @@
 #include "main.h"
 
 /* Constantes ----------------------------------------------------------------*/
-#define BAUD_RATE	115200
+#define BAUD_RATE	9600 //115200
 #define USART_TIMEOUT	100
 
-/* Protótipos das Funções --------------------------------------------------- */
+/* Protï¿½tipos das Funï¿½ï¿½es --------------------------------------------------- */
 void usart1Config(void);
+int _write(int file, char *ptr, int len);
+int _read(int file, char *ptr, int len);
 
-/* Variáveis ---------------------------------------------------------------- */
+/* Variï¿½veis ---------------------------------------------------------------- */
 extern UART_HandleTypeDef huart1;
 
 

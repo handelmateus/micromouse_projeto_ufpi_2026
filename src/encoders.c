@@ -4,7 +4,7 @@
   * @author  Kleber Lima da Silva (kleber.ufu@hotmail.com)
   * @version V1.0.1
   * @date    20-Abril-2015
-  * @brief   Fun��es de acesso aos encoders
+  * @brief   Fun��es de acesso aos encoders
   ******************************************************************************
   */
 
@@ -12,13 +12,13 @@
 #include "encoders.h"
 
 
-/* Vari�veis Privadas ------------------------------------------------------- */
+/* Vari�veis Privadas ------------------------------------------------------- */
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim5;
 
 
 /**
-  * @brief Configura��o dos pinos e timers para os encoders
+  * @brief Configuração dos pinos e timers para os encoders
   * @param Nenhum
   * @return Nenhum
   */
@@ -52,6 +52,7 @@ void encodersConfig(void)
 	GPIO_InitStruct.Alternate = GPIO_AF2_TIM5;
 	HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
+	int amostrasfiltro = 5;
 
 	htim2.Instance = TIM2;
 	htim2.Init.Prescaler = 0;
@@ -62,11 +63,11 @@ void encodersConfig(void)
 	sConfig.IC1Polarity = TIM_ICPOLARITY_RISING;
 	sConfig.IC1Selection = TIM_ICSELECTION_DIRECTTI;
 	sConfig.IC1Prescaler = TIM_ICPSC_DIV1;
-	sConfig.IC1Filter = 3;
+	sConfig.IC1Filter = amostrasfiltro; //  o filtro exige que N amostras consecutivas confirmem o mesmo valor antes de registrar a transição
 	sConfig.IC2Polarity = TIM_ICPOLARITY_RISING;
 	sConfig.IC2Selection = TIM_ICSELECTION_DIRECTTI;
 	sConfig.IC2Prescaler = TIM_ICPSC_DIV1;
-	sConfig.IC2Filter = 3;
+	sConfig.IC2Filter = amostrasfiltro; //  o filtro exige que N amostras consecutivas confirmem o mesmo valor antes de registrar a transição
 	HAL_TIM_Encoder_Init(&htim2, &sConfig);
 
 
@@ -79,11 +80,11 @@ void encodersConfig(void)
 	sConfig.IC1Polarity = TIM_ICPOLARITY_RISING;
 	sConfig.IC1Selection = TIM_ICSELECTION_DIRECTTI;
 	sConfig.IC1Prescaler = TIM_ICPSC_DIV1;
-	sConfig.IC1Filter = 3;
+	sConfig.IC1Filter = amostrasfiltro; //  o filtro exige que N amostras consecutivas confirmem o mesmo valor antes de registrar a transição
 	sConfig.IC2Polarity = TIM_ICPOLARITY_FALLING;
 	sConfig.IC2Selection = TIM_ICSELECTION_DIRECTTI;
 	sConfig.IC2Prescaler = TIM_ICPSC_DIV1;
-	sConfig.IC2Filter = 3;
+	sConfig.IC2Filter = amostrasfiltro; //  o filtro exige que N amostras consecutivas confirmem o mesmo valor antes de registrar a transição
 	HAL_TIM_Encoder_Init(&htim5, &sConfig);
 
 	HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_1);
@@ -136,3 +137,4 @@ void resetEncoderDireita(void)
 {
 	TIM5->CNT = 0;
 }
+
